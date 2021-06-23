@@ -1,0 +1,41 @@
+:root {
+    --dark-accent: #3D3D3D;
+    --light-accent: #90d1d4;
+    --light-accent-secondary: #23495f;
+    --h1tag-size: 2.5rem; /* header, and article topics throughout the page */
+    --right-margin: 5vw; /* page margin to make more uniform */
+    --left-margin: 7vw; /* body content margin to make more uniform */
+    --border-line-width: 0.2rem; /* small accent border lines across page */
+  }
+
+header{
+    background-color: #3D3D3D;
+    padding:20px;
+}
+header > h1{
+    background: #90d1d4;
+    ;
+    color:#3D3D3D;
+    font-size:30px;
+    height: 2rem;
+    padding: .5vh 1vw 1vh var(--right-margin)
+}
+ul.tophead{
+    list-style-type: none;
+    padding: 0;
+    margin:0;
+    text-align: right;
+
+}
+li.list{
+    display:inline-block;
+    text-decoration:none;
+    color:#3D3D3D
+}
+
+img.headerimage{
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    height: 10rem;
+}
