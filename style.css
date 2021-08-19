@@ -4,7 +4,6 @@ header{
     justify-content: space-between;
     height:4rem;
     text-align:center;
-       
 }
 header > h1{
     background-color: #90d1d4;
@@ -86,7 +85,7 @@ h2{
     
 }
 .card{
-    width: 800px;
+    width: 900px;
     height:550px;
     background-color: #383838;
     color: #90d1d4;;
@@ -95,7 +94,7 @@ h2{
 }
 .view-port{
     background-color: #90d1d4;
-    width:800px;
+    width:900px;
     height:550px;
     overflow: hidden;
     align-items: center;
@@ -145,4 +144,19 @@ figcaption{
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+}
+footer{
+    text-align: center;
+    background: #383838;
+    display: flex;
+    justify-content: space-between;
+    height:4rem;
+    color:#90d1d4;
+    
+}
+h3{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
 }
