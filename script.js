@@ -1,39 +1,75 @@
-view_port= document.querySelector("view-port");
-images=document.querySelector("images-container");
-card_width = parseFloat(getComputedStyle(images.children[0]).width);
-let new_width = 0.0;
+var slidePosition = 1;
+SlideShow(slidePosition);
+const next = document.getElementById('next');
+const prev = document.getElementById('prev');
+const images = document.querySelector('.images-container');
 
-numberCards = images.children.length - 1;
-middleCard = Math.floor(numberCards/2);
-
-
-let img_width = 50;
-img = window.innerwidth < 768 ? 100 : img_width;
-
-new_width = 
-/Android|webOS|iPhone|iPad|iPod|Blackberry|IEMobile|Opera MIni/i.test(navigator.userAgent) ?
-(img_width / 100) * screen.width:
-(img_width / 100) * window.innerWidth;
-
-view_port.style.width = `${new_width}px`
-
-
-
-
-function orderCards(){
-    let counterRight = 1;
-    let counterLeft = middleCard;
-    for(i=0;i<images.children.length;i++){
-        images.children[i].style.transitionDuration = '3.0s';
-        if(i<middleCard){
-            images.children[i].style.left = `-${(counterLeft*card_width) - (new_width/2)}px`
-            counterLeft--;
-        }else if(i>middleCard){
-            images.children[i].style.left = `${(counterRight*card_width) + (new_width/2)}px`
-            counterRight++;
-        }else{
-            images.children[i].style.left = `${new_width/2}px`
-        }
-    }
+// forward/Back controls
+function plusSlides(n) {
+  SlideShow(slidePosition += n);
 }
-order_cards();
+const first_card = images.children[0].cloneNode(true);
+const last_card = images.children[images.children.length-1].cloneNode(true);
+
+//  images controls
+function currentSlide(n) {
+  SlideShow(slidePosition = n);
+}
+images.insertBefore(last_card,images.children[0]);
+images.appendChild(first_card);
+
+function SlideShow(n) {
+  var i;
+  var slides = document.getElementsByClassName("Containers");
+  var circles = document.getElementsByClassName("dots");
+  if (n > slides.length) {slidePosition = 1}
+  if (n < 1) {slidePosition = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < circles.length; i++) {
+      circles[i].className = circles[i].className.replace(" enable", "");
+  }
+  slides[slidePosition-1].style.display = "block";
+  circles[slidePosition-1].className += " enable";
+}  
+images.style.transitionDuration = "0.0s";
+images.style.transform = `translate(-500px )`
+
+let current_card = 1;
+
+next.addEventListener('click', () => {
+    if(current_card < images.children.length - 1) {
+        current_card++;
+        images.style.transitionDuration = "0.5s";
+        images.style.transform = `translate(-${current_card * 500}px )`
+
+        if(current_card === images.children.length - 1) {
+            setTimeout(() => {
+                images.style.transitionDuration = "0.0s";
+                images.style.transform = `translate(-500px )`;
+                current_card = 1;
+            },600);
+
+        }
+    }else{
+        return;
+    }
+})
+prev.addEventListener('click', () => {
+    if(current_card > 1) {
+        current_card--;
+        images.style.transitionDuration = ".5s";
+        images.style.transform = `translate(-${current_card * 500}px )`
+        if(current_card === 0) {
+            setTimeout(() => {
+                images.style.transitionDuration = "0.0s";
+                images.style.transform = `translate(-${(images.children.length-2) * 500}px)`;
+                current_card = images.children.length - 2;
+            },600);
+        }
+    }else{
+        return;
+    }
+
+}) 
