@@ -1,3 +1,4 @@
+/*Carousel */
 const next = document.getElementById('next');
 const pev = document.getElementById('prev');
 const images = document.querySelector('.images-container');
@@ -49,3 +50,13 @@ prev.addEventListener('click', () => {
     }
     
 });
+/*Carousel*/
+
+
+
+/*Modal*/
+
+const openModalButtons = document.querySelectorAll('[data-modal-target]')
+const closeModalButtons = document.querySelector('[data-close]');
+const overlay = document.getElementById('overlay');
+
