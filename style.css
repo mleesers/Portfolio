@@ -106,7 +106,9 @@ h2{
 }
 .linksbottom{
     text-decoration: none;
+    
 }
+
 .container{
     text-align: center;
     margin-top: 1rem;
@@ -139,7 +141,10 @@ figcaption{
     border-bottom: 3px solid #90d1d4;
     margin-bottom:3rem;
 }
-
+.list:hover{
+    cursor: pointer;
+    background-color: #90d1d4;
+}
 #Contact-Me{
     margin-left: auto;
     margin-right: auto;
@@ -211,6 +216,8 @@ form{
     border:2px solid #144C59;
     line-height: 1rem;
     box-sizing: border-box;
+    padding:5px;
+    border-radius: 8px;
 }
 .btn{
     background-color: #90d1d4;
@@ -218,6 +225,12 @@ form{
     font-weight:bold;
     border:2px solid #144C59;
     margin-bottom: 1rem;
+    padding:5px;
+    border-radius: 8px;
+}
+#emailBut:hover{
+    cursor: pointer;
+    background-color: #90d1d4;
 }
 #overlay{
     position:fixed;

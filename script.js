@@ -54,9 +54,4 @@ prev.addEventListener('click', () => {
 
 
 
-/*Modal*/
-
-const openModalButtons = document.querySelectorAll('[data-modal-target]')
-const closeModalButtons = document.querySelector('[data-close]');
-const overlay = document.getElementById('overlay');
 
