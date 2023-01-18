@@ -1,6 +1,6 @@
 /*Carousel */
 const next = document.getElementById('next');
-const pev = document.getElementById('prev');
+const prev = document.getElementById('prev');
 const images = document.querySelector('.images-container');
 
 let current_card = 1;
